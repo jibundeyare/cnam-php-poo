@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        <h1>{{ title }}</h1>
+
+        {# fiche produit #}
+        <div>
+            <h2>{{ product.name }}</h2>
+            <p>{{ product.description }}</p>
+
+            {% if product.achetable %}
+            <div>
+                <p>{{ product.prix_achat }} €</p>
+                <a href="/acheter.php?id={{ product.id }}">Acheter</a>
+            </div>
+            {% endif %}
+
+            {% if product.louable %}
+            <div>
+                <p>{{ product.prix_location }} €</p>
+                <a href="/louer.php?id={{ product.id }}">Louer</a>
+            </div>
+            {% endif %}
+        </div>
+
+    </body>
+</html>
